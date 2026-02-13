@@ -1,3 +1,18 @@
+// --- Private Access Gate ---
+const secretWord = "hernickname"; // CHANGE THIS to your secret word!
+const userInput = prompt("Enter our secret word to enter our world ❤️");
+
+if (userInput !== secretWord) {
+    document.body.innerHTML = `
+        <div style="background:#1a0a10; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#ff4d6d; font-family:sans-serif; text-align:center; padding:20px;">
+            <h1 style="font-size:3rem;">🔒 Oops!</h1>
+            <p style="font-size:1.5rem;">This space is only for my favorite person. 😉</p>
+            <button onclick="location.reload()" style="margin-top:20px; padding:10px 20px; background:#ff4d6d; color:white; border:none; border-radius:50px; cursor:pointer;">Try Again ❤️</button>
+        </div>
+    `;
+    window.stop(); // Stop execution of the rest of the scripts
+}
+
 // Togetherness Counter
 // Set the date we met (YYYY, MM (0-indexed), DD)
 // Change this date to your actual anniversary!
