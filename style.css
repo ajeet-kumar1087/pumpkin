@@ -25,6 +25,99 @@ h1, h2, h3 {
     font-family: 'Dancing Script', cursive;
 }
 
+/* Custom Lock Screen */
+.lock-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #1a0a10; /* Dark Theme Background */
+    z-index: 9999; /* On top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease;
+}
+
+.lock-content {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(45, 15, 25, 0.8);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 77, 109, 0.3);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.lock-content h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.lock-content p {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.lock-content input {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    border: 2px solid var(--secondary-color);
+    background: rgba(0,0,0,0.3);
+    color: white;
+    outline: none;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.lock-content input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(255, 77, 109, 0.4);
+}
+
+.lock-content button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.lock-content button:hover {
+    transform: scale(1.1);
+    background: #e01e37;
+}
+
+#errorMsg {
+    color: #ff4d6d;
+    margin-top: 1rem;
+    font-weight: bold;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* Background Video */
 .bg-video {
     position: fixed; /* Reverted to fixed */

@@ -1,17 +1,36 @@
 // --- Private Access Gate ---
-const secretWord = "hernickname"; // CHANGE THIS to your secret word!
-const userInput = prompt("Enter our secret word to enter our world ❤️");
+const secretWord = "pumpkin"; // CHANGE THIS to your secret word!
 
-if (userInput !== secretWord) {
-    document.body.innerHTML = `
-        <div style="background:#1a0a10; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#ff4d6d; font-family:sans-serif; text-align:center; padding:20px;">
-            <h1 style="font-size:3rem;">🔒 Oops!</h1>
-            <p style="font-size:1.5rem;">This space is only for my favorite person. 😉</p>
-            <button onclick="location.reload()" style="margin-top:20px; padding:10px 20px; background:#ff4d6d; color:white; border:none; border-radius:50px; cursor:pointer;">Try Again ❤️</button>
-        </div>
-    `;
-    window.stop(); // Stop execution of the rest of the scripts
+const lockScreen = document.getElementById('lock-screen');
+const passwordInput = document.getElementById('passwordInput');
+const unlockBtn = document.getElementById('unlockBtn');
+const errorMsg = document.getElementById('errorMsg');
+
+function checkPassword() {
+    const userInput = passwordInput.value.trim(); // Case sensitive? Add .toLowerCase() if you want
+
+    if (userInput === secretWord) {
+        // Correct Password!
+        lockScreen.classList.add('fade-out');
+        // Optional: Start background video if it was paused
+        const bgVideo = document.querySelector('.bg-video');
+        if (bgVideo) bgVideo.play();
+    } else {
+        // Wrong Password
+        errorMsg.classList.remove('hidden');
+        passwordInput.value = "";
+        passwordInput.focus();
+    }
 }
+
+// Event Listeners for Lock Screen
+unlockBtn.addEventListener('click', checkPassword);
+
+passwordInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        checkPassword();
+    }
+});
 
 // Togetherness Counter
 // Set the date we met (YYYY, MM (0-indexed), DD)
@@ -66,10 +85,10 @@ function launchConfetti() {
     var duration = 5 * 1000;
     var animationEnd = Date.now() + duration;
     // Heart shapes and romantic colors
-    var defaults = { 
-        startVelocity: 30, 
-        spread: 360, 
-        ticks: 60, 
+    var defaults = {
+        startVelocity: 30,
+        spread: 360,
+        ticks: 60,
         zIndex: 200, // Fixed: Now sits above the celebration screen
         shapes: ['heart'],
         scalar: 1.2, // Make hearts bigger
@@ -80,7 +99,7 @@ function launchConfetti() {
         return Math.random() * (max - min) + min;
     }
 
-    var interval = setInterval(function() {
+    var interval = setInterval(function () {
         var timeLeft = animationEnd - Date.now();
 
         if (timeLeft <= 0) {
