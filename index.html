@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Valentine</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Background Video -->
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="imgs/reel.MOV" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>I'm Sorry, My Love... ❤️</h1>
+            <p>I know I've been a bit of a pumpkin lately, but I wanted to show you how much you truly mean to me.</p>
+            <div class="scroll-down">↓ Please look at our journey ↓</div>
+        </div>
+    </header>
+
+    <!-- Togetherness Counter -->
+    <section class="counter-section">
+        <h2>Every second with you is a gift I don't take for granted...</h2>
+        <div id="timer" class="timer">
+            <div class="time-box">
+                <span id="days">0</span>
+                <div class="label">Days</div>
+            </div>
+            <div class="time-box">
+                <span id="hours">0</span>
+                <div class="label">Hours</div>
+            </div>
+            <div class="time-box">
+                <span id="minutes">0</span>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="time-box">
+                <span id="seconds">0</span>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+        <p class="sub-text">...and I want to keep counting with you forever.</p>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <h2>Reminiscing on our beautiful times</h2>
+        <div class="timeline">
+
+            <!-- Memory 1: The Day We Met -->
+            <div class="container left">
+                <div class="content">
+                    <h3>The Day We Met</h3>
+                    <div class="photo-grid">
+                        <video src="imgs/we_met/we_met_3.mp4" autoplay muted loop playsinline></video>
+                        <img src="imgs/we_met/we_met_1.jpg" alt="First Meeting">
+                        <img src="imgs/we_met/we_met_2.jpg" alt="First Meeting">
+                        <img src="imgs/we_met/we_met_4.jpg" alt="First Meeting">
+                    </div>
+                    <p>Feb 10, 2025. The day my life changed forever. I knew then that you were special.</p>
+                </div>
+            </div>
+
+            <!-- Memory 2: Random Moments -->
+            <div class="container right">
+                <div class="content">
+                    <h3>Our Random Moments</h3>
+                    <div class="photo-grid">
+                        <video src="imgs/random/random_1.mp4" autoplay muted loop playsinline></video>
+                        <img src="imgs/random/random_2.jpg" alt="Random Fun">
+                        <img src="imgs/random/random_3.jpg" alt="Random Fun">
+                        <img src="imgs/random/random_4.jpg" alt="Random Fun">
+                    </div>
+                    <p>The silly laughs, the quiet walks, and everything in between. These are my favorite times.</p>
+                </div>
+            </div>
+
+            <!-- Memory 3: Fights & Growth -->
+            <div class="container left">
+                <div class="content">
+                    <h3>Fights & Growth</h3>
+                    <div class="photo-grid">
+                        <video src="imgs/growth/growth_1.mp4" autoplay muted loop playsinline></video>
+                        <img src="imgs/growth/growth_2.jpg" alt="Growth">
+                        <img src="imgs/growth/growth_3.jpg" alt="Growth">
+                        <img src="imgs/growth/growth_5.jpg" alt="Growth">
+                    </div>
+                    <p>We're not perfect. We argue, we mess up. But we always come back stronger. I'm sorry for my part
+                        in them.</p>
+                </div>
+            </div>
+
+            <!-- Memory 4: Today -->
+            <div class="container right">
+                <div class="content">
+                    <h3>Today ❤️</h3>
+                    <div class="photo-grid">
+                        <video src="imgs/today/today_2.mov" autoplay muted loop playsinline></video>
+                        <img src="imgs/today/today_1.jpg" alt="Today">
+                        <img src="imgs/today/today_3.jpg" alt="Today">
+                        <img src="imgs/today/today_4.jpg" alt="Today">
+                    </div>
+                    <p>Here we are. I'm standing here asking for your forgiveness and your heart.</p>
+                </div>
+            </div>
+
+            <!-- Memory 5: Future With You -->
+            <div class="container left">
+                <div class="content">
+                    <h3>Future With You 🌍</h3>
+                    <div class="photo-grid">
+                        <video src="imgs/future/future_1.mp4" autoplay muted loop playsinline></video>
+                        <video src="imgs/future/future_3.mp4" autoplay muted loop playsinline></video>
+                        <video src="imgs/future/future_4.mp4" autoplay muted loop playsinline></video>
+                        <img src="imgs/future/future_2.jpg" alt="Future">
+                    </div>
+                    <p>I don't just want you for now. I want you for all the tomorrows waiting for us.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- The Proposal Section -->
+    <section class="proposal-section">
+        <div class="question-box">
+            <h1>I promise to keep choosing you every day. Will you still be my Valentine?</h1>
+            <div class="buttons">
+                <button id="yesBtn" class="btn yes-btn">Yes, I Forgive You ❤️</button>
+                <button id="noBtn" class="btn no-btn">No</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden Celebration Message -->
+    <div id="celebration" class="celebration hidden">
+        <h1>Thank You For Everything ❤️</h1>
+        <p>I promise to make you the happiest person. I love you!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
